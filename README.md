@@ -24,6 +24,21 @@ Within `server/`, you will find a few folders for database queries (`db/`), serv
 
 Within `client/`, you will find the `App.jsx` to start, along with a `scss/` folder for `scss` stylesheets.
 
+```txt
+src
+    client
+        scss
+        ...
+    server
+        db
+            models
+            queries
+        routes
+            ...
+        config
+            ...
+```
+
 ## Issues
 
 If you come across any bugs, please submit an [issue on the repo github page](https://github.com/Bryantellius/basic-mern-template/issues).
