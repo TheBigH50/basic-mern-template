@@ -47,4 +47,4 @@ You can also contact any contributors with details.
 
 ## Contributors
 
-[Ben Bryant]("https://github.com/Bryantellius")
+[Ben Bryant](https://github.com/Bryantellius)
