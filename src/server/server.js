@@ -14,10 +14,10 @@ app.use(express.static("public"));
 
 app.use("/api", apiRouter);
 
-// generic 404 handler
+// sends the react app index.html
 app.use((req, res, next) => {
   try {
-    res.status(404).send("Not Found");
+    res.sendFile(join(__dirname, "../../public/index.html"));
   } catch (error) {
     next(error);
   }
