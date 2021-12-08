@@ -1,15 +1,15 @@
 import mysql from "mysql";
 import config from "../../config";
 
-const Connection = mysql.createPool(config.mysql);
+const connection = mysql.createPool(config.mysql);
 
-const Query = (query, values) => {
+const query = (query, values) => {
   return new Promise((resolve, reject) => {
-    Connection.query(query, values, (err, results) => {
+    connection.query(query, values, (err, results) => {
       if (err) reject(err);
       resolve(results);
     });
   });
 };
 
-export default Query;
+export default query;

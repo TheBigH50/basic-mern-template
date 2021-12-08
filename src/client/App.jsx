@@ -1,27 +1,19 @@
 import React from "react";
 
 const App = () => {
-  const [products, setProducts] = React.useState([]);
+  const [message, setMessage] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api/products")
-      .then((res) => res.json())
-      .then((products) => setProducts(products));
+    fetch("/api/test")
+      .then((res) => res.text())
+      .then((message) => setMessage(message))
+      .catch((err) => alert("Failed to fetch test"));
   }, []);
 
   return (
     <main className="container">
       <div>
-        <h1>Products</h1>
-        <ul className="list-group-flush">
-          {products.map((p) => {
-            return (
-              <li key={p.ProductID} className="list-group-item">
-                {p.Name}
-              </li>
-            );
-          })}
-        </ul>
+        <h1>{message}</h1>
       </div>
     </main>
   );
