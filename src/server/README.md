@@ -33,3 +33,9 @@ New to this template? Here's how to get started:
 6. `/src/routes`: Contains your top level and sub level routes with Express Router.
 7. `.babelrc`: Configures babel plugins for transpiling ESM to CommonJS.
 8. `server.js`: Contains your main express server instance and binds the server to a specified port.
+
+## Environment Variables
+
+There is a `.env.template` file that models the `.env` file and variables you will need to create to start.
+
+Create a `.env` file based on the template file, and provide the appropriate values for the preset variables.
