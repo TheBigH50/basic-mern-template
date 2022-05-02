@@ -7,7 +7,7 @@ New to this template? Here's how to get started:
 1. Open your terminal to `src/server`
 2. Run `npm install`
 3. Start the development server with `npm start`
-4. Your express server will be running at (http://localhost:8080)[http://localhost:8080]
+4. Your express server will be running at [http://localhost:8080](http://localhost:8080)
 5. Read through the [project structure](#project-structure) below to get a better understanding about where and how to go about developing your backend.
 6. Happy Hacking!
 

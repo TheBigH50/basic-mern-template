@@ -9,7 +9,7 @@ New to this template? Here's how to get started:
 1. Open your terminal to `src/client`
 2. Run `npm install`
 3. Start the development server with `npm start`
-4. View your app at (http://localhost:3000)[http://localhost:3000]
+4. View your app at [http://localhost:3000](http://localhost:3000)
 5. Read through the [project structure](#project-structure) below to get a better understanding about where and how to go about developing your frontend.
 6. Happy Hacking!
 
