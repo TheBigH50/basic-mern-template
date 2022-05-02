@@ -1,20 +1,41 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 import apiRouter from "./routes";
 import config from "./config";
+import { errorHandler } from "./middlewares/errorHandler";
 
 const app = express();
 
-// parses incoming request body as json if header indicates application/json
+/**
+ * Parses incoming request body as json if header indicates application/json
+ */
 app.use(express.json());
-// logs incoming request information to the dev console
+
+/**
+ * Enables incoming requests from cross origin domains
+ */
+app.use(cors());
+
+/**
+ * Logs incoming request information to the dev console
+ */
 app.use(morgan("dev"));
-// directs incoming static asset requests to the public folder
+
+/**
+ * Directs incoming static asset requests to the public folder
+ */
 app.use(express.static("public"));
 
+/**
+ * Directs all routes starting with /api to the top level api express router
+ */
 app.use("/api", apiRouter);
 
-// sends the react app index.html
+/**
+ * Sends the react app index.html for page requests
+ * Only needed in production when you are not using the react dev server
+ */
 app.use((req, res, next) => {
   try {
     res.sendFile(join(__dirname, "../../public/index.html"));
@@ -23,15 +44,15 @@ app.use((req, res, next) => {
   }
 });
 
-// generic error handler
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(err.status || 500).json({
-    name: err.name || "Unknown error",
-    msg: err.message || "An error occurred on the server.",
-  });
-});
+/**
+ * Error handler middleware
+ */
+app.use(errorHandler);
 
-app.listen(config.port || 3000, () =>
+/**
+ * Bind the app to a specified port
+ * You can access your app at http://localhost:<port>
+ */
+app.listen(config.port || 5000, () =>
   console.log(`Server listening on port ${config.port}...`)
 );

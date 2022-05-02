@@ -6,38 +6,22 @@ To get started, select the "Use this template" option from this github page.
 
 Once you create a repository on your account from this template, clone the project.
 
-After cloning, `cd` into the project folder and run `npm install` to install the dependencies.
+Now that you have a copy of this project locally, follow the instructions for frontend and backend setup:
 
-You're all set. Use `npm run dev` to run you app in development. Happy Hacking!
+- [Frontend Setup](./src/client/README.md)
+- [Backend Setup](./src/server/README.md)
 
-## ENV Variables
+Happy Hacking!
 
-There is a `.env.template` file in the root directory with the server port and mysql configuration values.
-
-Create a new file, `.env`, and add the variables and their appropriate values to be loading in the node environment.
-
-## Structure
+## Project Structure
 
 The project is seperated into `server/` and `client/` code bases within the `src/` folder.
 
-Within `server/`, you will find a few folders for database queries (`db/`), server routes (`routes/`), and configuration (`config/`).
+Within `server/`, you will find a few folders for database connection and utils (`db/`), controllers for business logic (`controllers/`), functions for express middlewars (`middlewares/`), server routes (`routes/`), and configuration (`config/`).
 
-Within `client/`, you will find the `App.jsx` to start, along with a `scss/` folder for `scss` stylesheets.
+Within `client/`, you will find the `App.jsx` to start, along with other folders for frontend organization.
 
-```txt
-src
-    client
-        scss
-        ...
-    server
-        db
-            models
-            queries
-        routes
-            ...
-        config
-            ...
-```
+Read [Frontend Project Structure](./src/client/README.md#project-structure) and [Backend Project Structure](./src/server/README.md#project-structure) for more details on the respective `/client` and `/server/` organization.
 
 ## Issues
 
